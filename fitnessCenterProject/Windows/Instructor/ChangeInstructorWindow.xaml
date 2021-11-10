@@ -1,0 +1,33 @@
+﻿<Window x:Class="fitnessCenterProject.Windows.Instructor.ChangeInstructorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fitnessCenterProject.Windows.Instructor"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="LightGray"
+        Title="Change Your Data" Height="590" Width="400">
+    <Grid>
+        <Label Content="Change Your Data" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,23,0,0"/>
+        <Separator HorizontalAlignment="Left" Height="39" Margin="31,65,0,0" VerticalAlignment="Top" Width="329"/>
+        <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,108,0,0"/>
+        <Label Content="Last name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,160,0,0"/>
+        <Label Content="JMBG"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,210,0,0"/>
+        <Label Content="Gender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,264,0,0"/>
+        <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,319,0,0"/>
+        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,369,0,0"/>
+        <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,418,0,0"/>
+        <Button Background="Gray" Content="Change" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="74,496,0,0" Height="33" Click="changeButton"/>
+        <Button Background="Gray" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="213,496,0,0" Height="33" Click="closeButton"/>
+        <TextBox Text="{Binding Path=FirstName}" BorderBrush="Black" Name="textBoxName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Margin="155,111,0,0"/>
+        <TextBox Text="{Binding Path=LastName}" BorderBrush="Black"  Name="textBoxLastName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Margin="155,163,0,0"/>
+        <TextBox Text="{Binding Path=Jmbg}" IsReadOnly="True" BorderBrush="Black" Name="textBoxJMBG" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Margin="155,213,0,0"/>
+        <TextBox Text="{Binding Path=Email}"  BorderBrush="Black" Name="textBoxEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Margin="155,373,0,0"/>
+        <TextBox Text="{Binding Path=PasswordOfUser}"  BorderBrush="Black" Name="textBoxPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Margin="155,418,0,0"/>
+        <ComboBox Text="{Binding Path=Gender}" Name="comboBoxGender" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="155,268,0,0"/>
+        <ComboBox Name="comboBoxAddresses" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="155,319,0,0"/>
+
+    </Grid>
+</Window>

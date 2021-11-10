@@ -1,0 +1,31 @@
+﻿<Window x:Class="fitnessCenterProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fitnessCenterProject"
+        mc:Ignorable="d"
+        Title="LogIn" Height="500" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="LightGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <Button Background="Gray" Content="Submit" HorizontalAlignment="Left" Margin="32,229,0,0" VerticalAlignment="Top" Height="30" Width="96" Grid.ColumnSpan="2" Click="logInButton"/>
+        <Button Background="Gray" Content="Exit" HorizontalAlignment="Left" Margin="214,229,0,0" VerticalAlignment="Top" Height="30" Width="96" Grid.Column="1" Click="exitTheApp"/>
+        <Label FontWeight="Bold" Content="JMBG" HorizontalAlignment="Left" Height="33" Margin="32,111,0,0" VerticalAlignment="Top" Width="68" Grid.ColumnSpan="2"/>
+        <PasswordBox BorderBrush="White" Name="textBoxPassword" Background="Black" Foreground="White" HorizontalAlignment="Left" Height="27" Margin="76,169,0,0" VerticalAlignment="Top" Width="234" Grid.Column="1"/>
+        <Button Background="Gray" Content="Continue as guest" HorizontalAlignment="Left" Margin="86,337,0,0" VerticalAlignment="Top" Width="128" Height="24" Grid.Column="1" Click="openGuestWindow"/>
+        <TextBox BorderBrush="White" Name="textBoxJMBG" Background="Black" Foreground="White" HorizontalAlignment="Left" Height="27" Margin="76,114,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Grid.Column="1"/>
+        <Label FontWeight="Bold" Content="Password" HorizontalAlignment="Left" Height="33" Margin="32,166,0,0" VerticalAlignment="Top" Width="68" Grid.ColumnSpan="2"/>
+        <Label Content="LogIn" FontSize="20px" FontWeight="Bold" HorizontalAlignment="Left" Height="36" Margin="110,31,0,0" VerticalAlignment="Top" Width="220" Grid.Column="1"/>
+        <Separator HorizontalAlignment="Left" Height="0" Margin="32,72,0,0" VerticalAlignment="Top" Width="316" Grid.ColumnSpan="2"/>
+        <Separator HorizontalAlignment="Left" Height="29" Margin="32,77,0,0" VerticalAlignment="Top" Width="316" Grid.ColumnSpan="2"/>
+        <Label FontWeight="Bold" Content="Don't have account?&#xD;&#xA;" HorizontalAlignment="Left" Height="33" Margin="86,299,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+        <Label FontWeight="Bold" Content="or&#xA;" HorizontalAlignment="Left" Height="33" Margin="129,366,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+        <Button Background="Gray" Content="Registration" HorizontalAlignment="Left" Margin="86,399,0,0" VerticalAlignment="Top" Width="128" Height="24" Grid.Column="1" Click="registrationWindow"/>
+    </Grid>
+</Window>
