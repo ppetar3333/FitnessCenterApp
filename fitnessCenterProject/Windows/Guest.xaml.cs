@@ -38,8 +38,8 @@ namespace fitnessCenterProject.Windows
 
         private void searchInstructorsButton(object sender, RoutedEventArgs e)
         {
-            SearchInstructors searchInstructors = new SearchInstructors();
-            searchInstructors.ShowDialog();
+            SearchOptions searchOptions = new SearchOptions();
+            searchOptions.ShowDialog();
         }
 
         private void changeVisibilityFitnessCenter(object sender, EventArgs e)

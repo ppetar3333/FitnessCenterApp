@@ -20,7 +20,7 @@
         <Label Content="Enter email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,276,0,0"/>
         <TextBox Name="textBoxName" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,126,0,0"/>
         <TextBox Name="textBoxLastName" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,174,0,0"/>
-        <TextBox Name="textBoxAddress" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,222,0,0"/>
         <TextBox Name="textBoxEmail" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,276,0,0"/>
+        <ComboBox Name="comboBoxAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158" Margin="230,227,0,0"/>
     </Grid>
 </Window>

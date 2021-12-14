@@ -1,4 +1,5 @@
 ﻿using fitnessCenterProject.Essentials;
+using fitnessCenterProject.Essentials.FillComboBox;
 using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows.SearchBY;
 using System;
@@ -21,44 +22,49 @@ namespace fitnessCenterProject.Windows.Administrator.SearchAdmin
     public partial class SearchBeginners : Window
     {
         private ObservableCollection<Models.Beginner> beginnersDataCollection;
-        private Models.Beginner foundBeginner;
-        private string name, lastName, email, addressStreet;
+        private string name, lastName, email, addressToSplit;
         private int findAddress;
 
         public SearchBeginners()
         {
             InitializeComponent();
+            FillComboBox.fillComboBoxAddress(comboBoxAddress);
         }
         private void getDataFromInputs()
         {
             name = textBoxName.Text;
             lastName = textBoxLastName.Text;
             email = textBoxEmail.Text;
-            addressStreet = textBoxAddress.Text;
-            findAddress = SearchAddressBY.searchAddressBYstreet(addressStreet);
+            if (comboBoxAddress.SelectedIndex != -1)
+            {
+                addressToSplit = comboBoxAddress.SelectedItem.ToString();
+                findAddress = SearchAddressBY.searchAddressBYstreet(addressToSplit.Split(',')[0]);
+            }
+            else
+            {
+                findAddress = 0;
+            }
+        }
+        private void closeButton(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
         private void searchButton(object sender, RoutedEventArgs e)
         {
-            if (UserValidation.searchUserValidation(textBoxName, textBoxLastName, textBoxAddress, textBoxEmail))
+            if (UserValidation.searchValidation(textBoxName,textBoxLastName,comboBoxAddress,textBoxEmail))
             {
                 getDataFromInputs();
-                foundBeginner = SearchUserValidation.checkInputsBeginner(name, lastName, email, findAddress);
-                beginnersDataCollection = new ObservableCollection<Models.Beginner>();
-                beginnersDataCollection.Add(foundBeginner);
-                if (foundBeginner != null)
+                beginnersDataCollection = SearchUserValidation.checkInputsBeginner(name, lastName, email, findAddress);
+                if (beginnersDataCollection.Count != 0)
                 {
                     ShowSearchingResultBeginner showResults = new ShowSearchingResultBeginner(beginnersDataCollection);
                     showResults.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Sorry, instructor with this data can not be found.");
+                    MessageBox.Show("Sorry, beginner with this data can not be found.");
                 }
             }
-        }
-        private void closeButton(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -37,18 +37,6 @@ namespace fitnessCenterProject.Windows.Administrator.AdminAddresses
             streetTextBox.DataContext = foundedAddress;
             numberTextBox.DataContext = foundedAddress;
         }
-
-        private void close(object sender, RoutedEventArgs e)
-        {
-            showMainWindow();
-            this.Close();
-        }
-
-        private void showMainWindow()
-        {
-            AdminAddressOptions adminAddressOptions = new AdminAddressOptions();
-            adminAddressOptions.Show();
-        }
         private void getDataFrominputs()
         {
             id = foundedAddress.PasswordOfAddress;
@@ -56,6 +44,17 @@ namespace fitnessCenterProject.Windows.Administrator.AdminAddresses
             city = cityTextBox.Text;
             street = streetTextBox.Text;
             number = int.Parse(numberTextBox.Text);
+        }
+        private void close(object sender, RoutedEventArgs e)
+        {
+            showMainWindow();
+        }
+
+        private void showMainWindow()
+        {
+            AdminAddressOptions adminAddressOptions = new AdminAddressOptions();
+            adminAddressOptions.Show();
+            this.Close();
         }
         private void update(object sender, RoutedEventArgs e)
         {

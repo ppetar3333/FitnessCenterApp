@@ -38,14 +38,12 @@ namespace fitnessCenterProject.Windows.Administrator.AdminInstructor
         {
             this.Close();
         }
-
         private void createInstrucors(object sender, RoutedEventArgs e)
         {
             CreateInstructor createInstructor = new CreateInstructor();
             createInstructor.Show();
             this.Close();
         }
-
         private void updateInstrucors(object sender, RoutedEventArgs e)
         {
             object selectedInstructor = instructorsInfo.SelectedItem;
@@ -61,7 +59,6 @@ namespace fitnessCenterProject.Windows.Administrator.AdminInstructor
                 MessageBox.Show("You need to select column.");
             }
         }
-
         private void deleteInstrucors(object sender, RoutedEventArgs e)
         {
             object selectedInstructor = instructorsInfo.SelectedItem;

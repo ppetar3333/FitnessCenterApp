@@ -12,16 +12,6 @@ namespace fitnessCenterProject.Windows.SearchBY
 {
     class SearchTrainingsBY
     {
-        public static Training searchTrainingBYid(string singleID)
-        {
-            foreach (var tr in AllData.Instance.trainings.Where(tr => tr.PasswordOfTraining.ToString().Equals(singleID)))
-            {
-                return tr;
-            }
-
-            return null;
-        }
-
         public static ObservableCollection<Training> findBeginnerTraining(int idOfBeginner)
         {
             ObservableCollection<Training> trainingsBeginner = new ObservableCollection<Training>();

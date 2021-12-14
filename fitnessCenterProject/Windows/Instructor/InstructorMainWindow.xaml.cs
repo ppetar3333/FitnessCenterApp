@@ -118,8 +118,16 @@ namespace fitnessCenterProject.Windows
                 }
             }
             beginners = new ObservableCollection<Models.Beginner>(beginners.Distinct());
-            CheckBeginners checkBeginners = new CheckBeginners(beginners);
-            checkBeginners.ShowDialog();
+            if (beginners.Count > 0)
+            {
+                CheckBeginners checkBeginners = new CheckBeginners(beginners, jmbgOfUser);
+                checkBeginners.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Instructor does not have trainings.");
+            }
         }
 
         private void deleteTraining(object sender, RoutedEventArgs e)

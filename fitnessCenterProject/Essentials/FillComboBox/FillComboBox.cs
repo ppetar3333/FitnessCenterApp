@@ -25,7 +25,7 @@ namespace fitnessCenterProject.Essentials.FillComboBox
             SqlDataReader dataReader = cmd.ExecuteReader();
             while (dataReader.Read())
             {
-                comboBoxData.Items.Add(dataReader[1]);
+                comboBoxData.Items.Add(dataReader[1] + "," + dataReader[2] + "," + dataReader[3]);
             }
         }
 

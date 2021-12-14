@@ -29,15 +29,5 @@ namespace fitnessCenterProject.Windows.SearchBY
 
             return null;
         }
-
-        public static string searchBeginnerBYid(int id)
-        {
-            foreach (var beginner in AllData.Instance.beginners.Where(beginner => beginner.Id == id))
-            {
-                return beginner.FirstName;
-            }
-
-            return "";
-        }
     }
 }

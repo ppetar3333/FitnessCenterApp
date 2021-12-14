@@ -22,9 +22,11 @@ namespace fitnessCenterProject.Windows.Instructor.InstructorCheckBeginners
     public partial class CheckBeginners : Window
     {
         private readonly ICollectionView viewBegginerData;
-        public CheckBeginners(ObservableCollection<Models.Beginner> beginners)
+        private string jmbgOfInstructor;
+        public CheckBeginners(ObservableCollection<Models.Beginner> beginners, string jmbgOfUser)
         {
             InitializeComponent();
+            this.jmbgOfInstructor = jmbgOfUser;
             viewBegginerData = CollectionViewSource.GetDefaultView(beginners);
             FillDataGrid.setAttribuesForDataGrid(beginnersInfo, viewBegginerData);
         }
@@ -36,6 +38,8 @@ namespace fitnessCenterProject.Windows.Instructor.InstructorCheckBeginners
 
         private void close(object sender, RoutedEventArgs e)
         {
+            InstructorMainWindow instructor = new InstructorMainWindow(jmbgOfInstructor);
+            instructor.Show();
             this.Close();
         }
     }

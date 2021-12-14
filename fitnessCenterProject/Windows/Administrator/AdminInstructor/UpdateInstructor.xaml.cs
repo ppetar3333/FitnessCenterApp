@@ -1,6 +1,7 @@
 ﻿using fitnessCenterProject.Enums;
 using fitnessCenterProject.Essentials;
 using fitnessCenterProject.Essentials.FillComboBox;
+using fitnessCenterProject.Essentials.FillInputs;
 using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows.SearchBY;
 using System;
@@ -23,6 +24,7 @@ namespace fitnessCenterProject.Windows.Administrator.AdminInstructor
     public partial class UpdateInstructor : Window
     {
         private Models.Instructor foundInstructor;
+        private readonly FillInputs fillInputs = new FillInputs();
         private int id, addressID;
         private long jmbg;
         private string firstName, lastName, gender, email, password;
@@ -30,19 +32,7 @@ namespace fitnessCenterProject.Windows.Administrator.AdminInstructor
         {
             InitializeComponent();
             foundInstructor = SearchInstructorBY.searchInstructorBYjmbg(jmbgOfInstructor);
-            fillInData(foundInstructor);
-        }
-
-        private void fillInData(Models.Instructor foundedInstructor)
-        {
-            textBoxName.DataContext = foundedInstructor;
-            textBoxLastName.DataContext = foundedInstructor;
-            textBoxJMBG.DataContext = foundedInstructor;
-            textBoxEmail.DataContext = foundedInstructor;
-            textBoxPassword.DataContext = foundedInstructor;
-            FillComboBox.fillComboBoxAddress(comboBoxAddresses);
-            FillComboBox.fillComboBoxGender(comboBoxGender);
-
+            fillInputs.fillInInputs(foundInstructor, textBoxName, textBoxLastName, textBoxPassword, textBoxJMBG, textBoxEmail, comboBoxAddresses, comboBoxGender);
         }
         private void closeButton(object sender, RoutedEventArgs e)
         {
@@ -54,22 +44,12 @@ namespace fitnessCenterProject.Windows.Administrator.AdminInstructor
             adminInstructorOptions.Show();
             this.Close();
         }
-        private void getDataFromInputs()
-        {
-            id = foundInstructor.Id;
-            firstName = textBoxName.Text;
-            lastName = textBoxLastName.Text;
-            addressID = SearchAddressBY.searchAddressBYstreet(comboBoxAddresses.SelectedItem.ToString());
-            jmbg = long.Parse(textBoxJMBG.Text.ToString());
-            gender = comboBoxGender.SelectedItem.ToString();
-            email = textBoxEmail.Text;
-            password = textBoxPassword.Text;
-        }
         private void changeButton(object sender, RoutedEventArgs e)
         {
             if (UserValidation.updateUserValidation(textBoxName, comboBoxGender, textBoxLastName, textBoxPassword, comboBoxAddresses, textBoxEmail))
             {
-                getDataFromInputs();
+                id = foundInstructor.Id;
+                fillInputs.getDataFromInputs(textBoxName, textBoxLastName, textBoxPassword, textBoxJMBG, textBoxEmail, comboBoxAddresses, comboBoxGender, out firstName, out lastName, out addressID, out jmbg, out gender, out email, out password);
                 AllData.Instance.updateInstructor(id, firstName, lastName, jmbg, gender, addressID, email, password);
                 MessageBox.Show("You have successfuly changed your data.");
                 showMainWindow();

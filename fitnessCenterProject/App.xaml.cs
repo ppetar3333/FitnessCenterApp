@@ -14,11 +14,6 @@ namespace fitnessCenterProject
     /// </summary>
     public partial class App : Application
     {
-        public static void back(Window currentWindow, Window previousWindow)
-        {
-            currentWindow.Close();
-            previousWindow.Show();
-        }
     }
  
 }

@@ -1,4 +1,5 @@
 ﻿using fitnessCenterProject.Essentials;
+using fitnessCenterProject.Essentials.FillComboBox;
 using fitnessCenterProject.Models;
 using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows.SearchBY;
@@ -23,30 +24,36 @@ namespace fitnessCenterProject.Windows
     public partial class SearchInstructors : Window
     {
         private ObservableCollection<Models.Instructor> instructorsDataCollection;
-        private string name, lastName, email, addressStreet;
+        private string name, lastName, email, addressToSplit;
         private int findAddress;
 
         public SearchInstructors()
         {
             InitializeComponent();
+            FillComboBox.fillComboBoxAddress(comboBoxAddress);
         }
         private void getDataFromInputs()
         {
             name = textBoxName.Text;
             lastName = textBoxLastName.Text;
             email = textBoxEmail.Text;
-            addressStreet = textBoxAddress.Text;
-            findAddress = SearchAddressBY.searchAddressBYstreet(addressStreet);
+            if (comboBoxAddress.SelectedIndex != -1)
+            {
+                addressToSplit = comboBoxAddress.SelectedItem.ToString();
+                findAddress = SearchAddressBY.searchAddressBYstreet(addressToSplit.Split(',')[0]);
+            }
+            else
+            {
+                findAddress = 0;
+            }
         }
         private void searchButton(object sender, RoutedEventArgs e)
         {
-            if (UserValidation.searchUserValidation(textBoxName,textBoxLastName,textBoxAddress,textBoxEmail))
+            if (UserValidation.searchValidation(textBoxName,textBoxLastName,comboBoxAddress,textBoxEmail))
             {
                 getDataFromInputs();
-                Models.Instructor foundInstructor = SearchUserValidation.checkInputsInstructor(name, lastName, email, findAddress);
-                instructorsDataCollection = new ObservableCollection<Models.Instructor>();
-                instructorsDataCollection.Add(foundInstructor);
-                if (foundInstructor != null)
+                instructorsDataCollection = SearchUserValidation.checkInputsInstructor(name, lastName, email, findAddress);
+                if (instructorsDataCollection.Count != 0)
                 {
                     ShowSearchingResultInstructor showResults = new ShowSearchingResultInstructor(instructorsDataCollection);
                     showResults.ShowDialog();

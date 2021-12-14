@@ -20,24 +20,20 @@ namespace fitnessCenterProject.Windows.Administrator.SearchAdmin
         {
             InitializeComponent();
         }
-
         private void close(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void searchInstructors(object sender, RoutedEventArgs e)
         {
-            SearchInstructors searchInstructors = new SearchInstructors();
+            SearchOptions searchInstructors = new SearchOptions();
             searchInstructors.ShowDialog();
         }
-
         private void searchBeginners(object sender, RoutedEventArgs e)
         {
-            SearchBeginners searchBeginners = new SearchBeginners();
+            SearchOptionsBeginner searchBeginners = new SearchOptionsBeginner();
             searchBeginners.ShowDialog();
         }
-
         private void searchByType(object sender, RoutedEventArgs e)
         {
             SearchByType searchByType = new SearchByType();

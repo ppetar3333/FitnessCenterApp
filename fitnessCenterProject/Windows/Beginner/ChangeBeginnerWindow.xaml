@@ -10,7 +10,7 @@
         Background="LightGray"
         Title="Change Your Data" Height="590" Width="400">
     <Grid>
-        <Label Content="Change Your Data" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,23,0,0"/>
+        <Label Content="Change Your Data" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,23,0,0"/>
         <Separator HorizontalAlignment="Left" Height="39" Margin="31,65,0,0" VerticalAlignment="Top" Width="329"/>
         <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,108,0,0"/>
         <Label Content="Last name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,160,0,0"/>

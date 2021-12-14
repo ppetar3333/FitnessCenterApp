@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,12 @@ namespace fitnessCenterProject.Essentials.FillDataGrid
         {
             ICollectionView viewTrainings = CollectionViewSource.GetDefaultView(AllData.Instance.trainings);
             setAttribuesForDataGrid(trainingsInfo, viewTrainings);
+        }
+
+        public static void fillDataGridAdmins(DataGrid adminsInfo)
+        {
+            ICollectionView viewAdmins = CollectionViewSource.GetDefaultView(AllData.Instance.admins);
+            setAttribuesForDataGrid(adminsInfo, viewAdmins);
         }
 
     }

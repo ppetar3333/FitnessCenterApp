@@ -47,7 +47,7 @@ namespace fitnessCenterProject.Essentials
         public static int generateNewIDForTraining()
         {
             int maxID = -1;
-            foreach (var training in AllData.Instance.trainings.Where(training => training.PasswordOfTraining > maxID))
+            foreach (var training in AllData.Instance.trainings.Where(training => training.PasswordOfTraining > maxID && (training.Active == false || training.Active == true)))
             {
                 maxID = training.PasswordOfTraining;
             }

@@ -27,18 +27,27 @@ namespace fitnessCenterProject.Windows.Beginner.BeginnerCheckInstructor
         private Models.Instructor instructor;
         private string jmbgOfBeginner;
         private ObservableCollection<Training> trainingsCollection;
+
         public ShowAllInstructors(string jmbgOfUser)
         {
             jmbgOfBeginner = jmbgOfUser;
             InitializeComponent();
             FillDataGrid.fillDataGridInstructor(instructorsInfo);
         }
+        private void changeVisibilityInstructors(object sender, EventArgs e)
+        {
+            ChangeVisibilityDataGrid.changeVisibilityOfInstructor(instructorsInfo);
+        }
+        private void closeButton(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
         private void selectButton(object sender, RoutedEventArgs e)
         {
             object selectedInstructor = instructorsInfo.SelectedItem;
             if (selectedInstructor != null)
             {
-                instructor = (Models.Instructor) selectedInstructor;
+                instructor = (Models.Instructor)selectedInstructor;
                 trainingsCollection = SearchTrainingsBY.findInstructorTraining(instructor.Id);
                 if (trainingsCollection.Count == 0)
                 {
@@ -54,16 +63,6 @@ namespace fitnessCenterProject.Windows.Beginner.BeginnerCheckInstructor
             {
                 MessageBox.Show("You need to select column.");
             }
-        }
-
-        private void changeVisibilityInstructors(object sender, EventArgs e)
-        {
-            ChangeVisibilityDataGrid.changeVisibilityOfInstructor(instructorsInfo);
-        }
-
-        private void closeButton(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

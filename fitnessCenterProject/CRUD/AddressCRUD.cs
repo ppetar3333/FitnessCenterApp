@@ -56,6 +56,25 @@ namespace fitnessCenterProject.CRUD
             }
         }
 
+        public void updateAddress(int id, string street, int number, string city, string country)
+        {
+            using (SqlConnection conn = new SqlConnection(AllData.dataBaseString))
+            {
+                conn.Open();
+                using (SqlCommand cmd =
+                    new SqlCommand("update Addresses set street=@street,number=@number,city=@city,country=@country where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@street", street);
+                    cmd.Parameters.AddWithValue("@number", number);
+                    cmd.Parameters.AddWithValue("@city", city);
+                    cmd.Parameters.AddWithValue("@country", country);
+                    int rows = cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+        }
+
         public void createAddress(int passwordOfAddress, string street, string number, string city, string country)
         {
             using (SqlConnection conn = new SqlConnection(AllData.dataBaseString))
@@ -70,25 +89,6 @@ namespace fitnessCenterProject.CRUD
                     cmd.Parameters.AddWithValue("@city", city);
                     cmd.Parameters.AddWithValue("@country", country);
                     cmd.Parameters.AddWithValue("@active", 1);
-                    int rows = cmd.ExecuteNonQuery();
-                    conn.Close();
-                }
-            }
-        }
-
-        public void updateAddress(int id, string street, int number, string city, string country)
-        {
-            using (SqlConnection conn = new SqlConnection(AllData.dataBaseString))
-            {
-                conn.Open();
-                using (SqlCommand cmd =
-                    new SqlCommand("update Addresses set street=@street,number=@number,city=@city,country=@country where id=@id", conn))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@street", street);
-                    cmd.Parameters.AddWithValue("@number", number);
-                    cmd.Parameters.AddWithValue("@city", city);
-                    cmd.Parameters.AddWithValue("@country", country);
                     int rows = cmd.ExecuteNonQuery();
                     conn.Close();
                 }

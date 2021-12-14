@@ -7,6 +7,7 @@ using fitnessCenterProject.Windows.Administrator.AdminAddresses;
 using fitnessCenterProject.Windows.Administrator.AdminBeginner;
 using fitnessCenterProject.Windows.Administrator.AdminFitnessCenter;
 using fitnessCenterProject.Windows.Administrator.AdminInstructor;
+using fitnessCenterProject.Windows.Administrator.AdminOptions;
 using fitnessCenterProject.Windows.Administrator.AdminTrainings;
 using fitnessCenterProject.Windows.Administrator.SearchAdmin;
 using fitnessCenterProject.Windows.SearchBY;
@@ -111,6 +112,12 @@ namespace fitnessCenterProject.Windows
             {
                 MessageBox.Show("You need to select column.");
             }
+        }
+
+        private void adminButton(object sender, RoutedEventArgs e)
+        {
+            AdministratorWindow administrator = new AdministratorWindow(jmbgOfUser);
+            administrator.ShowDialog();
         }
     }
 }

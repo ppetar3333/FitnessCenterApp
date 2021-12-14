@@ -25,12 +25,10 @@ namespace fitnessCenterProject.Windows.Administrator.SearchAdmin
             InitializeComponent();
             FillDataGrid.fillDataGridInstructor(instructorsInfo);
         }
-
         private void changeVisibilityInstructors(object sender, EventArgs e)
         {
             ChangeVisibilityDataGrid.changeVisibilityOfInstructor(instructorsInfo);
         }
-
         private void closeButton(object sender, RoutedEventArgs e)
         {
             this.Close();

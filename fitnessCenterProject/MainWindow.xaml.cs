@@ -1,5 +1,6 @@
 ﻿using fitnessCenterProject.Essentials;
 using fitnessCenterProject.Models;
+using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows;
 using System;
 using System.Collections.Generic;
@@ -70,52 +71,55 @@ namespace fitnessCenterProject
         }
         private void logInButton(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlConnection = new SqlConnection(AllData.dataBaseString);
-            try
+            if (LogInValidation.logInValidation(textBoxJMBG, textBoxPassword))
             {
-                sqlConnection.Open();
-
-                declaringNamesOfDataBase();
-
-                sqlCommandAdministrator = new SqlCommand(administratorData, sqlConnection);
-                sqlCommandInstructor = new SqlCommand(instructorData, sqlConnection);
-                sqlCommandBeginner = new SqlCommand(beginnerData, sqlConnection);
-
-                sqlCommandUsers(sqlCommandAdministrator);
-                sqlCommandUsers(sqlCommandInstructor);
-                sqlCommandUsers(sqlCommandBeginner);
-
-                countAdminstrator = (int) sqlCommandAdministrator.ExecuteScalar();
-                countInstructor = (int) sqlCommandInstructor.ExecuteScalar();
-                countBeginner = (int) sqlCommandBeginner.ExecuteScalar();
-
-                if (countBeginner > 0)
+                SqlConnection sqlConnection = new SqlConnection(AllData.dataBaseString);
+                try
                 {
-                    loggedInMessage("Begginer.", new BeginnerMainWindow(textBoxJMBG.Text));
-                } 
-                else if (countAdminstrator > 0)
-                {
-                    loggedInMessage("Administrator.", new AdministratorMainWindow(textBoxJMBG.Text));
+                    sqlConnection.Open();
+
+                    declaringNamesOfDataBase();
+
+                    sqlCommandAdministrator = new SqlCommand(administratorData, sqlConnection);
+                    sqlCommandInstructor = new SqlCommand(instructorData, sqlConnection);
+                    sqlCommandBeginner = new SqlCommand(beginnerData, sqlConnection);
+
+                    sqlCommandUsers(sqlCommandAdministrator);
+                    sqlCommandUsers(sqlCommandInstructor);
+                    sqlCommandUsers(sqlCommandBeginner);
+
+                    countAdminstrator = (int)sqlCommandAdministrator.ExecuteScalar();
+                    countInstructor = (int)sqlCommandInstructor.ExecuteScalar();
+                    countBeginner = (int)sqlCommandBeginner.ExecuteScalar();
+
+                    if (countBeginner > 0)
+                    {
+                        loggedInMessage("Begginer.", new BeginnerMainWindow(textBoxJMBG.Text));
+                    }
+                    else if (countAdminstrator > 0)
+                    {
+                        loggedInMessage("Administrator.", new AdministratorMainWindow(textBoxJMBG.Text));
+                    }
+                    else if (countInstructor > 0)
+                    {
+                        loggedInMessage("Instructor.", new InstructorMainWindow(textBoxJMBG.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show("JMBG or password is incorrect.");
+                        textBoxJMBG.Clear();
+                        textBoxPassword.Clear();
+                        textBoxJMBG.Focus();
+                    }
                 }
-                else if (countInstructor > 0)
+                catch (Exception ex)
                 {
-                    loggedInMessage("Instructor.", new InstructorMainWindow(textBoxJMBG.Text));
+                    MessageBox.Show(ex.Message);
                 }
-                else
+                finally
                 {
-                    MessageBox.Show("JMBG or password is incorrect.");
-                    textBoxJMBG.Clear();
-                    textBoxPassword.Clear();
-                    textBoxJMBG.Focus();
+                    sqlConnection.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlConnection.Close();
             }
         }
     }

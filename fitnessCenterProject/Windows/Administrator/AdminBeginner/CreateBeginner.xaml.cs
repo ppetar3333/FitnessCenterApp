@@ -1,6 +1,7 @@
 ﻿using fitnessCenterProject.Enums;
 using fitnessCenterProject.Essentials;
 using fitnessCenterProject.Essentials.FillComboBox;
+using fitnessCenterProject.Essentials.FillInputs;
 using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows.SearchBY;
 using System;
@@ -22,6 +23,7 @@ namespace fitnessCenterProject.Windows.Administrator.AdminBeginner
 {
     public partial class CreateBeginner : Window
     {
+        private readonly FillInputs fillInputs = new FillInputs();
         private int id, addressID;
         private string firstName, lastName, gender, email, password;
         private long jmbgString;
@@ -35,33 +37,22 @@ namespace fitnessCenterProject.Windows.Administrator.AdminBeginner
         private void close(object sender, RoutedEventArgs e)
         {
             adminMainWindow();
-            this.Close();
         }
-        private static void adminMainWindow()
+        private void adminMainWindow()
         {
             AdminBeginnerOptions adminBeginnerOptions = new AdminBeginnerOptions();
             adminBeginnerOptions.Show();
-        }
-        private void getDataFromInputs()
-        {
-            firstName = textBoxName.Text;
-            lastName = textBoxLastName.Text;
-            jmbgString = long.Parse(textBoxJMBG.Text.ToString());
-            gender = comboBoxEnum.SelectedItem.ToString();
-            addressID = SearchAddressBY.searchAddressBYstreet(comboBoxAddresses.SelectedItem.ToString());
-            email = textBoxEmail.Text;
-            password = textBoxPassword.Text;
+            this.Close();
         }
         private void create(object sender, RoutedEventArgs e)
         {
             if (UserValidation.createUserValidation(textBoxName,textBoxLastName,textBoxJMBG,comboBoxEnum,textBoxPassword,comboBoxAddresses,textBoxEmail))
             {
                 id = GenerateNewID.generateNewIDForBeginner();
-                getDataFromInputs();
+                fillInputs.getDataFromInputs(textBoxName, textBoxLastName, textBoxPassword, textBoxJMBG, textBoxEmail, comboBoxAddresses, comboBoxEnum, out firstName, out lastName, out addressID, out jmbgString, out gender, out email, out password);
                 AllData.Instance.createBeginner(id, firstName, lastName, jmbgString, gender, addressID, email, password);
                 MessageBox.Show("You have successfuly added new beginner.");
                 adminMainWindow();
-                this.Close();
             }
         }
     }

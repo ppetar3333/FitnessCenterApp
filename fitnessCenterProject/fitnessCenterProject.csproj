@@ -76,7 +76,9 @@
     <Compile Include="CRUD\FitnessCenterCRUD.cs" />
     <Compile Include="Essentials\FillComboBox\FillComboBox.cs" />
     <Compile Include="Essentials\FillDataGrid\FillDataGrid.cs" />
+    <Compile Include="Essentials\FillInputs\FillInputs.cs" />
     <Compile Include="Essentials\GenerateNewID.cs" />
+    <Compile Include="Interfaces\ChangeInterfaces\IChangeModels.cs" />
     <Compile Include="Interfaces\ModelsInterfaces\ICUAddress.cs" />
     <Compile Include="Interfaces\ModelsInterfaces\ICUAdmin.cs" />
     <Compile Include="Interfaces\ModelsInterfaces\ICUBeginner.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Training.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Validation\LogInValidation.cs" />
     <Compile Include="Validation\ModelValidation.cs" />
     <Compile Include="Validation\SearchUserValidation.cs" />
     <Compile Include="Validation\UserValidation.cs" />
@@ -132,6 +135,15 @@
     </Compile>
     <Compile Include="Windows\Administrator\AdministratorMainWindow.xaml.cs">
       <DependentUpon>AdministratorMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Administrator\AdminOptions\AdministratorWindow.xaml.cs">
+      <DependentUpon>AdministratorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Administrator\AdminOptions\CreateAdmin.xaml.cs">
+      <DependentUpon>CreateAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Administrator\AdminOptions\UpdateAdmin.xaml.cs">
+      <DependentUpon>UpdateAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Administrator\AdminTrainings\AdminTrainingsOptions.xaml.cs">
       <DependentUpon>AdminTrainingsOptions.xaml</DependentUpon>
@@ -196,6 +208,36 @@
     <Compile Include="Windows\Registration\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\BeginnerAddress.xaml.cs">
+      <DependentUpon>BeginnerAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\BeginnerEmail.xaml.cs">
+      <DependentUpon>BeginnerEmail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\BeginnerFirstName.xaml.cs">
+      <DependentUpon>BeginnerFirstName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\BeginnerLastName.xaml.cs">
+      <DependentUpon>BeginnerLastName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\InstructorAddress.xaml.cs">
+      <DependentUpon>InstructorAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\InstructorEmail.xaml.cs">
+      <DependentUpon>InstructorEmail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\InstructorFirstName.xaml.cs">
+      <DependentUpon>InstructorFirstName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\InstructorLastName.xaml.cs">
+      <DependentUpon>InstructorLastName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\SearchOneCriterionDesicion.xaml.cs">
+      <DependentUpon>SearchOneCriterionDesicion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchByOneCriterion\SearchOneCriterionDesicionBeginner.xaml.cs">
+      <DependentUpon>SearchOneCriterionDesicionBeginner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SearchBY\SearchAddressBY.cs" />
     <Compile Include="Windows\SearchBY\SearchAdminBY.cs" />
     <Compile Include="Windows\SearchBY\SearchBeginnerBY.cs" />
@@ -204,6 +246,12 @@
     <Compile Include="Windows\SearchBY\SearchTrainingsBY.cs" />
     <Compile Include="Windows\SearchInstructors.xaml.cs">
       <DependentUpon>SearchInstructors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchOptions.xaml.cs">
+      <DependentUpon>SearchOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchOptionsBeginner.xaml.cs">
+      <DependentUpon>SearchOptionsBeginner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ShowSearchingResultInstructor.xaml.cs">
       <DependentUpon>ShowSearchingResultInstructor.xaml</DependentUpon>
@@ -269,6 +317,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Administrator\AdministratorMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Administrator\AdminOptions\AdministratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Administrator\AdminOptions\CreateAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Administrator\AdminOptions\UpdateAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -356,7 +416,55 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\SearchByOneCriterion\BeginnerAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\BeginnerEmail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\BeginnerFirstName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\BeginnerLastName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\InstructorAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\InstructorEmail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\InstructorFirstName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\InstructorLastName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\SearchOneCriterionDesicion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchByOneCriterion\SearchOneCriterionDesicionBeginner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\SearchInstructors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SearchOptionsBeginner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

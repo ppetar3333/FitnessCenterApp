@@ -16,12 +16,12 @@
         <Label FontWeight="Bold" FontSize="20" Content="Search Instructors" HorizontalAlignment="Left" Margin="144,24,0,0" VerticalAlignment="Top" Width="184" Height="50"/>
         <Label Content="Enter name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,127,0,0"/>
         <Label Content="Enter last name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,175,0,0"/>
-        <Label Content="Enter address (street)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,223,0,0"/>
+        <Label Content="Select Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,223,0,0"/>
         <Label Content="Enter email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,276,0,0"/>
         <TextBox Name="textBoxName" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,126,0,0"/>
         <TextBox Name="textBoxLastName" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,174,0,0"/>
-        <TextBox Name="textBoxAddress" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,222,0,0"/>
         <TextBox Name="textBoxEmail" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="230,276,0,0"/>
+        <ComboBox Name="comboBoxAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158" Margin="230,227,0,0"/>
 
     </Grid>
 </Window>

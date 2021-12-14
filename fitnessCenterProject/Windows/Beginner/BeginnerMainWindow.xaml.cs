@@ -55,7 +55,6 @@ namespace fitnessCenterProject.Windows
             viewTrainings = CollectionViewSource.GetDefaultView(oCollectionTrainings);
             FillDataGrid.setAttribuesForDataGrid(trainingInformations, viewTrainings);
         }
-
         private void changeVisibilityTrainings(object sender, EventArgs e)
         {
             ChangeVisibilityDataGrid.changeVisibilityOfTrainings(trainingInformations);
@@ -74,7 +73,7 @@ namespace fitnessCenterProject.Windows
         }
         private void searchInstructors(object sender, RoutedEventArgs e)
         {
-            SearchInstructors searchInstructors = new SearchInstructors();
+            SearchOptions searchInstructors = new SearchOptions();
             searchInstructors.ShowDialog();
         }
 

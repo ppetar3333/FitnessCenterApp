@@ -78,7 +78,25 @@ namespace fitnessCenterProject.Validation
             return ok;
         }
 
-        public static bool searchUserValidation(TextBox textBoxName, TextBox textBoxLastName, TextBox textBoxAddress, TextBox textBoxEmail)
+        public static bool searchValidation(TextBox textBoxName, TextBox textBoxLastName, ComboBox comboBoxAddress, TextBox textBoxEmail)
+        {
+            bool ok = true;
+            String message = "Error. Please correct invalid inputs\n";
+            if (textBoxName.Text.Equals("") &&
+                textBoxLastName.Text.Equals("") &&
+                (comboBoxAddress.SelectedIndex == -1) &&
+                textBoxEmail.Text.Equals(""))
+            {
+                message += "- You need to type at least one input!\n";
+                ok = false;
+            }
+            if (ok == false)
+                MessageBox.Show(message, "Please, try again.");
+
+            return ok;
+        }
+
+        public static bool searchFirstNameValidation(TextBox textBoxName)
         {
             bool ok = true;
             String message = "Error. Please correct invalid inputs\n";
@@ -87,16 +105,29 @@ namespace fitnessCenterProject.Validation
                 message += "- Name field can not be blank!\n";
                 ok = false;
             }
+            if (ok == false)
+                MessageBox.Show(message, "Please, try again.");
+
+            return ok;
+        }
+        public static bool searchLastNameValidation(TextBox textBoxLastName)
+        {
+            bool ok = true;
+            String message = "Error. Please correct invalid inputs\n";
             if (textBoxLastName.Text.Equals(""))
             {
                 message += "- Last name field can not be blank!\n";
                 ok = false;
             }
-            if (textBoxAddress.Text.Equals(""))
-            {
-                message += "- Address field can not be blank!\n";
-                ok = false;
-            }
+            if (ok == false)
+                MessageBox.Show(message, "Please, try again.");
+
+            return ok;
+        }
+        public static bool searchEmailValidation(TextBox textBoxEmail)
+        {
+            bool ok = true;
+            String message = "Error. Please correct invalid inputs\n";
             if (textBoxEmail.Text.Equals(""))
             {
                 message += "- Email field can not be empty!\n";
@@ -105,6 +136,20 @@ namespace fitnessCenterProject.Validation
             else if (!textBoxEmail.Text.Contains("@"))
             {
                 message += "- Email is in invalid format!\n";
+                ok = false;
+            }
+            if (ok == false)
+                MessageBox.Show(message, "Please, try again.");
+
+            return ok;
+        }
+        public static bool searchAddressValidation(ComboBox comboBoxAddresses)
+        {
+            bool ok = true;
+            String message = "Error. Please correct invalid inputs\n";
+            if (comboBoxAddresses.SelectedItem == null)
+            {
+                message += "- Please select address\n";
                 ok = false;
             }
             if (ok == false)

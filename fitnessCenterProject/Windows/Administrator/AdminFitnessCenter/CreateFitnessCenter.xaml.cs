@@ -37,13 +37,13 @@ namespace fitnessCenterProject.Windows.Administrator.AdminFitnessCenter
         private void close(object sender, RoutedEventArgs e)
         {
             showMainWindow();
-            this.Close();
         }
 
-        private static void showMainWindow()
+        private void showMainWindow()
         {
             AdminFitnessCenterOptions adminFitnessCenterOptions = new AdminFitnessCenterOptions();
             adminFitnessCenterOptions.Show();
+            this.Close();
         }
         private void getDataFromInputs()
         {
@@ -59,7 +59,6 @@ namespace fitnessCenterProject.Windows.Administrator.AdminFitnessCenter
                 AllData.Instance.createFitnessCenter(id, nameOfCenter, addressID);
                 MessageBox.Show("You have successfuly added new Fitness Center.");
                 showMainWindow();
-                this.Close();
             }
         }
     }

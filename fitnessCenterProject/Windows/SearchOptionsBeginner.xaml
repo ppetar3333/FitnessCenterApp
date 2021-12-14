@@ -1,0 +1,19 @@
+﻿<Window x:Class="fitnessCenterProject.Windows.SearchOptionsBeginner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fitnessCenterProject.Windows"
+        mc:Ignorable="d"
+        Title="Search Options" Height="300" Width="350"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="LightGray">
+    <Grid>
+        <Button Background="Gray" Content="One Criterion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="35,130,0,0" Height="36" Click="oneCriterion"/>
+        <Button Background="Gray" Content="Multiple Criterion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="172,130,0,0" Height="36" Click="multipleCirterion"/>
+        <Label FontWeight="Bold" FontSize="18" Content="Search Options" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,36,0,0"/>
+        <Separator HorizontalAlignment="Left" Height="31" Margin="21,70,0,0" VerticalAlignment="Top" Width="292"/>
+        <Button Background="Gray" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="95,210,0,0" Height="25" Click="close"/>
+    </Grid>
+</Window>

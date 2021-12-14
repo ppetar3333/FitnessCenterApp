@@ -1,6 +1,7 @@
 ﻿using fitnessCenterProject.Enums;
 using fitnessCenterProject.Essentials;
 using fitnessCenterProject.Essentials.FillComboBox;
+using fitnessCenterProject.Essentials.FillInputs;
 using fitnessCenterProject.Models;
 using fitnessCenterProject.Validation;
 using fitnessCenterProject.Windows.SearchBY;
@@ -26,38 +27,16 @@ namespace fitnessCenterProject.Windows
 {
     public partial class Registration : Window
     {
+        private readonly FillInputs fillInputs = new FillInputs();
         private int id, addressID;
         private string firstName, lastName, gender, email, password;
-        private long jmbgString;
+        private long jmbg;
 
         public Registration()
         {
             InitializeComponent();
             FillComboBox.fillComboBoxAddress(comboBoxAddresses);
             FillComboBox.fillComboBoxGender(comboBoxEnum);
-        }
-        private void getDataFromInputs()
-        {
-            firstName = textBoxName.Text;
-            lastName = textBoxLastName.Text;
-            jmbgString = long.Parse(textBoxJMBG.Text.ToString());
-            gender = comboBoxEnum.SelectedItem.ToString();
-            addressID = SearchAddressBY.searchAddressBYstreet(comboBoxAddresses.SelectedItem.ToString());
-            email = textBoxEmail.Text;
-            password = textBoxPassword.Text;
-        }
-        private void registerButton(object sender, RoutedEventArgs e)
-        {
-            if(UserValidation.createUserValidation(textBoxName, textBoxLastName, textBoxJMBG, comboBoxEnum, textBoxPassword, comboBoxAddresses, textBoxEmail))
-            {
-                id = GenerateNewID.generateNewIDForBeginner();
-                getDataFromInputs();
-                AllData.Instance.createBeginner(id, firstName, lastName, jmbgString, gender, addressID, email, password);
-                MessageBox.Show("You have complete registration. Please login. Thank you!");
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
-            }
         }
 
         private void exitTheApp(object sender, RoutedEventArgs e)
@@ -68,6 +47,23 @@ namespace fitnessCenterProject.Windows
         private void backToLogInWindow(object sender, RoutedEventArgs e)
         {
             BackToLogIn.backToLogInWindow(this);
+        }
+        private void showMainWindow()
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        private void registerButton(object sender, RoutedEventArgs e)
+        {
+            if (UserValidation.createUserValidation(textBoxName, textBoxLastName, textBoxJMBG, comboBoxEnum, textBoxPassword, comboBoxAddresses, textBoxEmail))
+            {
+                id = GenerateNewID.generateNewIDForBeginner();
+                fillInputs.getDataFromInputs(textBoxName, textBoxLastName, textBoxPassword, textBoxJMBG, textBoxEmail, comboBoxAddresses, comboBoxEnum, out firstName, out lastName, out addressID, out jmbg, out gender, out email, out password);
+                AllData.Instance.createBeginner(id, firstName, lastName, jmbg, gender, addressID, email, password);
+                MessageBox.Show("You have complete registration. Please login. Thank you!");
+                showMainWindow();
+            }
         }
     }
 }
