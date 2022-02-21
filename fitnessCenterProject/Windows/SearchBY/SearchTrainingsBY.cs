@@ -34,6 +34,18 @@ namespace fitnessCenterProject.Windows.SearchBY
             return trainingsInstructor;
         }
 
+        public static Training findByID(string id)
+        {
+            foreach(Training training in AllData.Instance.trainings)
+            {
+                if(training.PasswordOfTraining.ToString().Equals(id))
+                {
+                    return training;
+                }
+            }
+            return null;
+        }
+
         public static ObservableCollection<Training> findTrainingBYdate(string date, int instructorId)
         {
             ObservableCollection<Training> foundedTrainings = new ObservableCollection<Training>();

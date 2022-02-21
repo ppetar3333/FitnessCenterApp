@@ -134,3 +134,6 @@ C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProje
 C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\Windows\Administrator\AdminOptions\AdministratorWindow.baml
 C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\Windows\Administrator\AdminOptions\CreateAdmin.baml
 C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\Windows\Administrator\AdminOptions\UpdateAdmin.baml
+C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\Windows\Administrator\AdminTrainings\AdminUpdateTraining.g.cs
+C:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\obj\Debug\Windows\Administrator\AdminTrainings\AdminUpdateTraining.baml

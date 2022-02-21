@@ -122,5 +122,27 @@ namespace fitnessCenterProject.CRUD
                 }
             }
         }
+
+        public void updateTraining(Training training)
+        {
+            using (SqlConnection conn = new SqlConnection(AllData.dataBaseString))
+            {
+                conn.Open();
+                using (SqlCommand cmd =
+                    new SqlCommand("update TrainingSchedule set dateOfTraining=@dateOfTraining,stratTime=@stratTime,durationOfTraining=@durationOfTraining,statusOfTraining=@statusOfTraining,instructor=@instructor," +
+                    "beginner=@beginner where id=@id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", training.PasswordOfTraining);
+                    cmd.Parameters.AddWithValue("@dateOfTraining", training.DateOfTraining);
+                    cmd.Parameters.AddWithValue("@stratTime", training.StartTime);
+                    cmd.Parameters.AddWithValue("@durationOfTraining", training.DuraionOfTraining);
+                    cmd.Parameters.AddWithValue("@statusOfTraining", training.TrainingStatus.ToString());
+                    cmd.Parameters.AddWithValue("@instructor", training.InstructorID);
+                    cmd.Parameters.AddWithValue("@beginner", training.BegginerID);
+                    int rows = cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+        }
     }
 }

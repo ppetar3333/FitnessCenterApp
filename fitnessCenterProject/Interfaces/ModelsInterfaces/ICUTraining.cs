@@ -11,5 +11,7 @@ namespace fitnessCenterProject.Interfaces.ModelsInterfaces
         void createTraining(int passwordOfTraining, DateTime dateOfTraining, string stratTime, int durationOfTraining, int instructorID);
         void cancelReservationOfTraining(int trainingID);
         void bookTraining(int trainingID, int beginnerID);
+
+        void updateTraining(Models.Training training);
     }
 }

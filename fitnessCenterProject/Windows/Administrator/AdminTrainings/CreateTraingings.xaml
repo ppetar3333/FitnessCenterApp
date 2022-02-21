@@ -12,7 +12,7 @@
     <Grid>
         <Label Content="Start time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,113,0,0"/>
         <Label Content="Duration of training (in minutes)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,169,0,0"/>
-        <TextBox Name="startTime" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="228,117,0,0"/>
+        <TextBox Text="{Binding Path=StartTime, ValidatesOnExceptions=True}" Name="startTime" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="228,117,0,0"/>
         <TextBox Name="durationOfTraining" BorderBrush="Black" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="228,173,0,0"/>
         <Label FontWeight="Bold" FontSize="18" Content="Create Training" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,26,0,0"/>
         <Button Background="Gray" Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="56,318,0,0" Click="create" Height="36"/>

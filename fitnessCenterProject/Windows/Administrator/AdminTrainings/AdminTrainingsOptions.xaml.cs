@@ -64,5 +64,21 @@ namespace fitnessCenterProject.Windows.Administrator.AdminTrainings
                 MessageBox.Show("Please select column.");
             }
         }
+
+        private void updateTraining(object sender, RoutedEventArgs e)
+        {
+            object selectedTraining = trainingsInfo.SelectedItem;
+            if (selectedTraining != null)
+            {
+                training = (Models.Training)selectedTraining;
+                AdminUpdateTraining updateTraining = new AdminUpdateTraining(training.PasswordOfTraining.ToString());
+                updateTraining.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You need to select column.");
+            }
+        }
     }
 }

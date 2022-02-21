@@ -14,6 +14,9 @@ FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProj
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminInstructor\CreateInstructor.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminInstructor\UpdateInstructor.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdministratorMainWindow.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\AdministratorWindow.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\CreateAdmin.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\UpdateAdmin.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminTrainings\AdminTrainingsOptions.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminTrainings\CreateTraingings.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\ChangeAdminWindow.xaml;;
@@ -28,14 +31,12 @@ FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProj
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Beginner\ChangeBeginnerWindow.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Guest.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\ChangeInstructorWindow.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCheckBeginners\CheckBeginners.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCheckTrainings\CheckTrainings.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCheckTrainings\ShowFoundedTrainings.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCreateTraining\CreateTraining.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorMainWindow.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Registration\Registration.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchInstructors.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\ShowSearchingResultInstructor.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCheckTrainings\ShowFoundedTrainings.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCheckBeginners\CheckBeginners.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Instructor\InstructorCreateTraining\CreateTraining.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\BeginnerAddress.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\BeginnerEmail.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\BeginnerFirstName.xaml;;
@@ -45,10 +46,10 @@ FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProj
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\InstructorFirstName.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\InstructorLastName.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\SearchOneCriterionDesicion.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchOptions.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchByOneCriterion\SearchOneCriterionDesicionBeginner.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchInstructors.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchOptions.xaml;;
 FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\SearchOptionsBeginner.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\AdministratorWindow.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\CreateAdmin.xaml;;
-FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminOptions\UpdateAdmin.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\ShowSearchingResultInstructor.xaml;;
+FC:\Users\Petar\Desktop\fitnessCenterProject\FitnessCenterrApp\fitnessCenterProject\Windows\Administrator\AdminTrainings\AdminUpdateTraining.xaml;;
 

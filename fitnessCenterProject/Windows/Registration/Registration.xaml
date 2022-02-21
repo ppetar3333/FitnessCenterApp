@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:fitnessCenterProject.Windows"
+        xmlns:local="clr-namespace:fitnessCenterProject.Windows" 
+        xmlns:validation="clr-namespace:fitnessCenterProject.Validation"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -15,7 +16,9 @@
         <TextBox Name="textBoxName" BorderBrush="Black" HorizontalAlignment="Left" Height="24" Margin="96,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
         <TextBox Name="textBoxLastName" BorderBrush="Black" HorizontalAlignment="Left" Height="24" Margin="96,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="166"/>
         <TextBox Name="textBoxJMBG" BorderBrush="Black" HorizontalAlignment="Left" Height="24" Margin="96,222,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="166"/>
+
         <TextBox Name="textBoxEmail" BorderBrush="Black" HorizontalAlignment="Left" Height="24" Margin="447,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+
         <TextBox Name="textBoxPassword" BorderBrush="Black" HorizontalAlignment="Left" Height="24" Margin="447,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
         <Label FontWeight="Bold" Content="Name" HorizontalAlignment="Left" Height="24" Margin="24,90,0,0" VerticalAlignment="Top" Width="57"/>
         <Label FontWeight="Bold" Content="Last name" HorizontalAlignment="Left" Height="24" Margin="24,155,0,0" VerticalAlignment="Top" Width="67"/>
@@ -25,11 +28,11 @@
         <Label FontWeight="Bold" Content="Email" HorizontalAlignment="Left" Height="24" Margin="351,218,0,0" VerticalAlignment="Top" Width="53"/>
         <Label FontWeight="Bold" Content="Password" HorizontalAlignment="Left" Height="24" Margin="351,283,0,0" VerticalAlignment="Top" Width="63"/>
         <Label FontSize="11px" FontWeight="Bold" Content="I agree to the terms and conditions" HorizontalAlignment="Left" Height="30" Margin="24,283,0,0" VerticalAlignment="Top" Width="210" RenderTransformOrigin="0.543,-0.796"/>
-        <CheckBox IsChecked="False" Name="checkBoxAgree" BorderBrush="Black" Content="Yes" HorizontalAlignment="Left" Height="24" Margin="226,289,0,0" VerticalAlignment="Top" Width="76"/>
+        <CheckBox  IsChecked="False" Name="checkBoxAgree" BorderBrush="Black" Content="Yes" HorizontalAlignment="Left" Height="24" Margin="226,289,0,0" VerticalAlignment="Top" Width="76"/>
         <Label FontWeight="Bold" Content="Registration" HorizontalAlignment="Left" Height="35" Margin="275,10,0,0" VerticalAlignment="Top" Width="117" FontSize="18px"/>
         <Separator HorizontalAlignment="Left" Height="24" Margin="24,45,0,0" VerticalAlignment="Top" Width="589"/>
         <Button Background="Gray" Content="Back" HorizontalAlignment="Left" Height="26" Margin="275,359,0,0" VerticalAlignment="Top" Width="110" Click="backToLogInWindow"/>
-        <ComboBox BorderBrush="black" Text="{Binding Path=Gender}" Name="comboBoxEnum" HorizontalAlignment="Left" Margin="447,92,0,0" VerticalAlignment="Top" Width="166"/>
+        <ComboBox Text="{Binding Path= Gender}" BorderBrush="black" Name="comboBoxEnum" HorizontalAlignment="Left" Margin="447,92,0,0" VerticalAlignment="Top" Width="166"/>
         <ComboBox Name="comboBoxAddresses" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Margin="447,157,0,0"/>
 
     </Grid>

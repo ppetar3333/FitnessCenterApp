@@ -93,6 +93,7 @@
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Training.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Validation\EmailValidation.cs" />
     <Compile Include="Validation\LogInValidation.cs" />
     <Compile Include="Validation\ModelValidation.cs" />
     <Compile Include="Validation\SearchUserValidation.cs" />
@@ -147,6 +148,9 @@
     </Compile>
     <Compile Include="Windows\Administrator\AdminTrainings\AdminTrainingsOptions.xaml.cs">
       <DependentUpon>AdminTrainingsOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Administrator\AdminTrainings\AdminUpdateTraining.xaml.cs">
+      <DependentUpon>AdminUpdateTraining.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Administrator\AdminTrainings\CreateTraingings.xaml.cs">
       <DependentUpon>CreateTraingings.xaml</DependentUpon>
@@ -336,6 +340,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Administrator\AdminTrainings\AdminUpdateTraining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Administrator\AdminTrainings\CreateTraingings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -502,5 +510,6 @@
   <ItemGroup>
     <Resource Include="logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

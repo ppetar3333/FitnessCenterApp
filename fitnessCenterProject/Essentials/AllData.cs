@@ -148,5 +148,10 @@ namespace fitnessCenterProject.Essentials
         {
             trainingsCRUD.bookTraining(trainingID, beginnerID);
         }
+
+        public void updateTraining(Training training)
+        {
+            trainingsCRUD.updateTraining(training);
+        }
     }
 }

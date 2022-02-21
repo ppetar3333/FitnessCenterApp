@@ -25,7 +25,6 @@ namespace fitnessCenterProject.Windows.Administrator.AdminOptions
         private int id, addressID;
         private string firstName, lastName, gender, email, password;
         private long jmbg;
-        private string jmbgOfUser;
         private string loggedInAdmin;
         public UpdateAdmin(string jmbgOfUser, string loggedInAdmin)
         {

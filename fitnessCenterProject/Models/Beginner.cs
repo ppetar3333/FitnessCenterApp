@@ -19,5 +19,6 @@ namespace fitnessCenterProject.Models
         {
             return base.ToString();
         }
+
     }
 }
